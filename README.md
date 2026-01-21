@@ -15,11 +15,32 @@ Anmerkung
 Die letzte Version konnte nicht mit Makey Makey getestet werden, da nicht vorhanden
 
 
-**Einzelne Features**
+**Einzelne Features und Aufgabenteilung**
+
+
+*Kommentare/Martin*
 
 
 
+ 
+*Slider-Szene/Kinzy Pointinger*
 
+A. SliderController 
+In diesem Script programmierte Kinzy die Steuerung des Sliders über Tastatureingaben (A → links, D → rechts). Jede Bewegung verändert die Position des Reglers um einen festen Schritt innerhalb eines definierten Bereichs (der Länge der ScrollBar). Die Schrittzahl ist entscheidend für die anschließende Verarbeitung der Abstimmung.
+ 
+B. SliderColor
+Kinzy implementierte eine Farbinterpolation mit einem Gradient, um die Farbe des Sliders dynamisch an seine aktuelle Position anzupassen. Dadurch erhält der Nutzer eine visuelle Rückmeldung über seine Auswahl.
+ 
+C. TimerController 
+Dieses Script überprüft in Echtzeit, ob der Nutzer den Slider innerhalb einer bestimmten Zeit bewegt hat. Erfolgt in diesem Zeitraum keine Eingabe, startet automatisch ein Countdown. Nach Ablauf wird die aktuelle Slider‑Position als Abstimmung an den VoteManager übergeben, und danach wird die Auswertungsszene geladen. Auch diese Funktion wurde von Kinzy umgesetzt.
+ 
+D. CountdownUi
+Kinzy entwickelte eine eigene Countdown‑Komponente, die über ein TextMeshPro‑UI‑Element eine visuelle Rückmeldung gibt. Der Nutzer sieht die verbleibende Zeit bis zur Speicherung seiner Abstimmung. Der Countdown läuft als Coroutine und ruft nach Ablauf eine Callback‑Methode auf.
+ 
+E. VoteManager 
+Kinzy programmierte den VoteManager, der die gesamte Abstimmungslogik verwaltet. Er speichert die abgegebenen Stimmen in einem Integer‑Array, begrenzt Eingaben auf den Bereich von –5 bis +5 und nutzt PlayerPrefs, um die Votes dauerhaft zu speichern und auch nach Szenenwechseln beizubehalten.
+
+ 
 *Grafische Darstellung/Caterina:*
 Projektbeitrag: Entwicklung des interaktiven Abstimmungs-Diagramms
 Caterina hat die technische die Visualisierung der Benutzerabstimmungen ("How other Users voted") entwickelt. Sie war dafür verantwortlich, die Rohdaten in eine klare, proportionale grafische Darstellung zu übersetzen und das UI-Layout stabil zu halten.
