@@ -8,7 +8,51 @@ Vielen Menschen wird folgende Situation bekannt vorkommen: Man öffnet eine Soci
 
 **Nutzungsanleitung**
 
-Nach dem Start sieht der Nutzende zunächst einen Slider sowie einen Post, der als Hologramm dargestellt wird. Über dem Slider befindet sich der Text „This post gives me … feelings“. Links neben dem Slider steht das Wort „negative“, ergänzt durch einen wütenden Smiley. Rechts befindet sich das Wort „positive“ mit einem glücklichen Smiley darunter. Mit Hilfe des Sliders kann der Nutzende angeben, welche Gefühle der gezeigte Post bei ihm auslöst. Die Steuerung erfolgt über Makey Makey. Um den Slider nach rechts zu bewegen, wird \[Aktion einsetzen, z. B. ein bestimmtes Objekt berührt]. Um den Slider nach links zu bewegen, muss gegen einen Sandsack getreten werden. Bleibt der Slider für einige Sekunden unverändert, erscheint ein Countdown-Timer, der bei 5 Sekunden startet. Läuft der Timer ab, wird die Eingabe des Nutzenden gespeichert. Anschließend wechselt die Ansicht und der Nutzende sieht eine grafische Darstellung, die zeigt, wie andere Personen auf denselben Post reagiert haben.
+Nutzungsanleitung
+Nach dem Start sieht der Nutzende zunächst einen Slider sowie einen Post, der als Hologramm dargestellt wird. Über dem Slider befindet sich der Text „This post gives me … feelings“. Links neben dem Slider steht das Wort „negative“, ergänzt durch einen wütenden Smiley. Rechts befindet sich das Wort „positive“ mit einem glücklichen Smiley darunter. Mit Hilfe des Sliders kann der Nutzende angeben, welche Gefühle der gezeigte Post bei ihm auslöst. Die Steuerung erfolgt über Makey Makey. Um den Slider nach rechts zu bewegen, wird ein leitfähiges Objekt in der Form eines Herzens bzw die "A" Taste gedrückt. Um den Slider nach links zu bewegen, muss gegen einen Sandsack getreten bzw die "D" Taste gedrückt werden. Bleibt der Slider für einige Sekunden unverändert, erscheint ein Countdown-Timer, der bei 5 Sekunden startet. Läuft der Timer ab, wird die Eingabe des Nutzenden gespeichert. Anschließend wechselt die Ansicht und der Nutzende sieht eine grafische Darstellung, die zeigt, wie andere Personen auf denselben Post reagiert haben.
+
+Anmerkung
+Die letzte Version konnte nicht mit Makey Makey getestet werden, da nicht vorhanden
+
+
+**Einzelne Features**
+
+
+
+
+Grafische Darstellung/Caterina:
+Projektbeitrag: Entwicklung des interaktiven Abstimmungs-Diagramms
+Caterina hat die technische die Visualisierung der Benutzerabstimmungen ("How other Users voted") entwickelt. Sie war dafür verantwortlich, die Rohdaten in eine klare, proportionale grafische Darstellung zu übersetzen und das UI-Layout stabil zu halten.
+
+A. Dynamische Visualisierung der Abstimmungsergebnisse (BarManager.cs)
+Caterina entwickelte die Logik, mit der die kleinen farbigen Balken über der Skala (von -5 bis 5) generiert und skaliert werden:
+•	Datenbasierte Skalierung: Sie implementierte eine Funktion, die die Höhe der Balken (z. B. bei den Werten -4, 2 und 3 im Bild) proportional zu den Abstimmungswerten berechnet.
+•	Wachstumsrichtung: Durch die programmatische Setzung des Pivot-Punkts auf die Unterkante (0.5, 0) stellte sie sicher, dass die Balken korrekt von der schwarzen Basislinie nach oben wachsen.
+•	Stabile Positionierung: Sie fixierte die Ankerpunkte der Balken an der Basis, damit diese auch bei einer Änderung der Diagrammgröße präzise auf der horizontalen Achse verankert bleiben.
+
+B. Layout-Struktur der Koordinatenachse (Anchor.cs)
+Um das Diagramm für verschiedene Bildschirmauflösungen robust zu machen, implementierte Caterina eine automatisierte Anker-Steuerung:
+•	Achsen-Ausrichtung: Sie entwickelte ein Skript, das die schwarze Hauptachse sowie die Markierungen automatisch im UI zentriert.
+•	Präzise Platzierung: Durch die Justierung der anchoredPosition stellte sie sicher, dass die Achse exakt an der gewünschten vertikalen Position im unteren Drittel des Bildschirms fixiert bleibt.
+
+C. Steuerung der Skalen-Beschriftung (XAxisLabels.cs)
+Caterina war für die dynamische Anordnung der Zahlenwerte (-5 bis 5) unterhalb der Hauptachse verantwortlich:
+•	Zentrale Justierung: Sie erstellte ein System, mit dem der vertikale Abstand aller Zahlenbeschriftungen zur Achse über einen einzigen Parameter (xNumbers) gesteuert werden kann.
+•	Dynamische Synchronisation: Die Logik stellt sicher, dass die Textfelder (TextMeshPro) in jedem Frame korrekt zur Achse ausgerichtet werden, was eine saubere und lesbare Skalierung unter den jeweiligen Balken garantiert.
+
+**Screenshots**
+1. Comment
+ <img width="780" height="437" alt="Comment" src="https://github.com/user-attachments/assets/6c430397-c274-4e2b-ad2d-9e95a8116f97" />
+
+ 2. Slider
+    
+![Slider](https://github.com/user-attachments/assets/f9f61f33-0d1f-4e7f-9119-0f658fb38881)
+
+4. Grafische Darstellung
+<img width="851" height="582" alt="Graph2" src="https://github.com/user-attachments/assets/56fb6096-e496-4ba4-a018-d8fdf0328a98" />
+
+Video:
+https://github.com/user-attachments/assets/d4a3fd33-fcb3-4325-82f6-bf5e2e456d9a
 
 
 
