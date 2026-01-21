@@ -20,7 +20,7 @@ Die letzte Version konnte nicht mit Makey Makey getestet werden, da nicht vorhan
 
 
 
-Grafische Darstellung/Caterina:
+*Grafische Darstellung/Caterina:*
 Projektbeitrag: Entwicklung des interaktiven Abstimmungs-Diagramms
 Caterina hat die technische die Visualisierung der Benutzerabstimmungen ("How other Users voted") entwickelt. Sie war dafür verantwortlich, die Rohdaten in eine klare, proportionale grafische Darstellung zu übersetzen und das UI-Layout stabil zu halten.
 
@@ -29,6 +29,11 @@ Caterina entwickelte die Logik, mit der die kleinen farbigen Balken über der Sk
 •	Datenbasierte Skalierung: Sie implementierte eine Funktion, die die Höhe der Balken (z. B. bei den Werten -4, 2 und 3 im Bild) proportional zu den Abstimmungswerten berechnet.
 •	Wachstumsrichtung: Durch die programmatische Setzung des Pivot-Punkts auf die Unterkante (0.5, 0) stellte sie sicher, dass die Balken korrekt von der schwarzen Basislinie nach oben wachsen.
 •	Stabile Positionierung: Sie fixierte die Ankerpunkte der Balken an der Basis, damit diese auch bei einer Änderung der Diagrammgröße präzise auf der horizontalen Achse verankert bleiben.
+
+Übergang zur Input-Szene (Ablaufsteuerung)
+Zusätzlich zur visuellen Darstellung bereitete Caterina den zeitgesteuerten Übergang vor:
+•	User-Feedback-Loop: Nach der Anzeige der Wahlergebnisse (wie im Screenshot durch den Timer "Return in: 15s" angedeutet) kehrt das System automatisch zur Input-Szene zurück.
+•	Prozessfluss: Caterina stellte sicher, dass die Diagramm-Daten nach Ablauf der Zeit bereinigt werden, sodass das System für die nächste Eingabe bereit ist und der Nutzer nahtlos zwischen der Stimmabgabe und der Ergebnisansicht wechseln kann.
 
 B. Layout-Struktur der Koordinatenachse (Anchor.cs)
 Um das Diagramm für verschiedene Bildschirmauflösungen robust zu machen, implementierte Caterina eine automatisierte Anker-Steuerung:
@@ -41,17 +46,17 @@ Caterina war für die dynamische Anordnung der Zahlenwerte (-5 bis 5) unterhalb 
 •	Dynamische Synchronisation: Die Logik stellt sicher, dass die Textfelder (TextMeshPro) in jedem Frame korrekt zur Achse ausgerichtet werden, was eine saubere und lesbare Skalierung unter den jeweiligen Balken garantiert.
 
 **Screenshots**
-1. Comment
+*1. Comment*
  <img width="780" height="437" alt="Comment" src="https://github.com/user-attachments/assets/6c430397-c274-4e2b-ad2d-9e95a8116f97" />
 
- 2. Slider
+*2. Slider*
     
 ![Slider](https://github.com/user-attachments/assets/f9f61f33-0d1f-4e7f-9119-0f658fb38881)
 
-4. Grafische Darstellung
+*3. Grafische Darstellung*
 <img width="851" height="582" alt="Graph2" src="https://github.com/user-attachments/assets/56fb6096-e496-4ba4-a018-d8fdf0328a98" />
 
-Video:
+*Video:*
 https://github.com/user-attachments/assets/d4a3fd33-fcb3-4325-82f6-bf5e2e456d9a
 
 
