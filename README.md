@@ -40,6 +40,10 @@ Kinzy entwickelte eine eigene Countdown‑Komponente, die über ein TextMeshPro�
 E. VoteManager 
 Kinzy programmierte den VoteManager, der die gesamte Abstimmungslogik verwaltet. Er speichert die abgegebenen Stimmen in einem Integer‑Array, begrenzt Eingaben auf den Bereich von –5 bis +5 und nutzt PlayerPrefs, um die Votes dauerhaft zu speichern und auch nach Szenenwechseln beizubehalten.
 
+
+
+
+
  
 *Grafische Darstellung/Caterina:*
 Projektbeitrag: Entwicklung des interaktiven Abstimmungs-Diagramms
@@ -50,6 +54,13 @@ Caterina entwickelte die Logik, mit der die kleinen farbigen Balken über der Sk
 •	Datenbasierte Skalierung: Sie implementierte eine Funktion, die die Höhe der Balken (z. B. bei den Werten -4, 2 und 3 im Bild) proportional zu den Abstimmungswerten berechnet.
 •	Wachstumsrichtung: Durch die programmatische Setzung des Pivot-Punkts auf die Unterkante (0.5, 0) stellte sie sicher, dass die Balken korrekt von der schwarzen Basislinie nach oben wachsen.
 •	Stabile Positionierung: Sie fixierte die Ankerpunkte der Balken an der Basis, damit diese auch bei einer Änderung der Diagrammgröße präzise auf der horizontalen Achse verankert bleiben.
+Berechnung der Balkenhöhe: Caterina nutzt eine mathematische Formel, um die Höhe der UI-Balken zu bestimmen. Dabei wird der Eingabewert (values[i]) durch 10 geteilt und mit einer maximalen Höhe von 200 Einheiten multipliziert. Das bedeutet: Ein Wert von 10 entspricht der vollen Höhe von 200 Pixeln. 
+•	Festlegung des Wachstumspunkts (Pivot): Sie setzt den Pivot-Punkt jedes Balkens programmatisch auf (0.5, 0). Dies ist entscheidend, damit sich die Balken beim Ändern der Höhe von der Grundlinie nach oben ausdehnen, anstatt von der Mitte aus in beide Richtungen zu wachsen.
+•	Anpassung der Grafik (sizeDelta): Caterina verändert gezielt nur die Y-Komponente der sizeDelta, während die Breite der Balken (X-Achse) unverändert bleibt. Dadurch behalten alle Balken ihre einheitliche Dicke, während sie unterschiedliche Höhen einnehmen.
+•	Horizontale Verankerung: Das Skript setzt die vertikalen Ankerpunkte (anchorMin.y und anchorMax.y) auf Null. Dies stellt sicher, dass alle Balken fest auf der unteren Basislinie des Diagramms stehen bleiben, unabhängig davon, wie groß das Fenster ist.
+•	Sicherheitsabfrage (Schleife): Die for-Schleife ist so programmiert, dass sie nur so viele Balken aktualisiert, wie sowohl Bild-Objekte im Array als auch Datenwerte vorhanden sind. Dies verhindert Fehlermeldungen (Index-Fehler), falls die Anzahl der Daten nicht exakt mit der Anzahl der Balken übereinstimmt.
+• Datenabruf: Über den Befehl VoteManager.Instance.GetAllVotes() greift das Skript auf die aktuelle Datenbank der Nutzer-Abstimmungen zu und speichert diese in einem Array (currentVotes).
+•	Visuelle Aktualisierung: Im letzten Schritt übergibt Caterina diese frischen Daten an die zuvor beschriebene Methode UpdateChart(currentVotes). Dadurch werden die Balken im Diagramm (wie im Bild zu sehen) sofort an die neuen Zahlen angepasst.
 
 Übergang zur Input-Szene (Ablaufsteuerung)
 Zusätzlich zur visuellen Darstellung bereitete Caterina den zeitgesteuerten Übergang vor:
@@ -68,6 +79,7 @@ Caterina war für die dynamische Anordnung der Zahlenwerte (-5 bis 5) unterhalb 
 
 **Screenshots**
 *1. Comment*
+
  <img width="780" height="437" alt="Comment" src="https://github.com/user-attachments/assets/6c430397-c274-4e2b-ad2d-9e95a8116f97" />
 
 *2. Slider*
