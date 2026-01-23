@@ -19,6 +19,16 @@ Die letzte Version konnte nicht mit Makey Makey getestet werden, da nicht vorhan
 
 
 *Kommentare/Martin*
+Erstellen der Graphischen Darstellung von Kommentaren.
+Erstellen eines Systems in welchen man Kommentar Info eingeben kann.
+Erstellen eines Systems welches Kommentare zufällig anordnet
+Schreiben der Kommentare
+Erstellen Profilbilder
+Zusammenfügen der 3 Projekte
+Erstellen der "Build" Szene
+GameObjects in Prefabs erstellen
+Editieren der Skripte für Funktion in einer Szene (zusammenarbeit der Systeme)
+Erstellen eines Skriptes welches die Graphischen Gameobjecte Aktiviert/Deaktiviert (Manager)
 
 
 
