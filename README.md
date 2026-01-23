@@ -89,6 +89,7 @@ Caterina war für die dynamische Anordnung der Zahlenwerte (-5 bis 5) unterhalb 
 •	Dynamische Synchronisation: Die Logik stellt sicher, dass die Textfelder (TextMeshPro) in jedem Frame korrekt zur Achse ausgerichtet werden, was eine saubere und lesbare Skalierung unter den jeweiligen Balken garantiert.
 
 **Screenshots**
+
 *1. Comment*
 
  <img width="780" height="437" alt="Comment" src="https://github.com/user-attachments/assets/6c430397-c274-4e2b-ad2d-9e95a8116f97" />
