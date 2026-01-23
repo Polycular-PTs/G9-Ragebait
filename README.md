@@ -19,6 +19,7 @@ Die letzte Version konnte nicht mit Makey Makey getestet werden, da nicht vorhan
 
 
 *Kommentare/Martin*
+
 Erstellen der Graphischen Darstellung von Kommentaren.
 Erstellen eines Systems in welchen man Kommentar Info eingeben kann.
 Erstellen eines Systems welches Kommentare zufällig anordnet
